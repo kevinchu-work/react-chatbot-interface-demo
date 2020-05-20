@@ -1,0 +1,81 @@
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 80%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInBottom {
+  animation-name: fadeInBottom;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  transition: 0.5s;
+}
+.fadeInBottomSlow {
+  animation-name: fadeInBottom;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: 1s;
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -80%, 0);
+  }
+}
+.fadeOutUp {
+  animation-name: fadeOutUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  transition: 0.5s;
+}
+.fadeOutUpSlow {
+  animation-name: fadeOutUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: 1s;
+}
+
+
+@keyframes fadeInWithBlock {
+  0% {
+    // display: block;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.fadeInWithBlock {
+  animation: fadeInWithBlock 500ms linear 0 forwards;
+  transition: 500ms;
+}
+
+@keyframes fadeOutWithBlock {
+  0% {
+    // display: block;
+    opacity: 1;
+    transform: scale(1);
+  }
+  99% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    // display: none;
+  }
+}
+.fadeOutWithBlock {
+  animation: fadeOutWithBlock 500ms linear 0 forwards;
+  transition: 500ms;
+}

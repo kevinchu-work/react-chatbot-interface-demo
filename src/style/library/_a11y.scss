@@ -1,0 +1,45 @@
+.sr-only, %sr-only {
+  position : absolute;
+  width    : 1px;
+  height   : 1px;
+  padding  : 0;
+  margin   : -1px;
+  overflow : hidden;
+  clip     : rect(0,0,0,0);
+  border   : 0;
+}
+
+.sr-only-focusable,
+%sr-only-focusable {
+  &:focus {
+    position : relative;
+    width    : auto;
+    height   : auto;
+    clip     : initial;
+    margin   : inherit;
+    padding  : inherit;
+    border   : initial;
+
+    z-index: 1059;
+  }
+}
+
+.skip-navigation-wrapper {
+  @include position($top: 0, $left: 0);
+  width: 100%;
+
+  @include flex(flex-start, center);
+
+  a, .skip-navigation {
+    @extend %sr-only;
+    @extend %sr-only-focusable;
+
+    padding: 10px 15px !important;
+    background-color: #fff;
+    font-size: 1.8rem;
+    color: $COM_BLUE;
+
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}

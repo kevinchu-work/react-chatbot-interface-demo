@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+@import './library';
+@import './base/font';
+
+
+// Core style ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+html, body {
+  // overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  @include font-face();
+}
+
+html {
+  font-size: 0.625rem;  // Force to 10px
+  width: 100%;
+  color: #000;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5; //WCAG
+
+  background-color: #fff;
+
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  overflow-x: hidden; //for HERO banner video
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: theme-color(blue-outline);
+    outline: 5px auto theme-color(blue-outline);
+    outline-offset: -2px;
+  }
+}
+
+// Sizing, margin, padding related ~~~~~~~~~~~~~~~~~~~~~~~~
+.clearMT   { margin-top: 0 !important; }
+.clearMB   { margin-bottom: 0 !important; }
+.clearPT   { padding-top: 0 !important; }
+.clearPB   { padding-bottom: 0 !important; }
+@for $i from 1 through 20 {
+  $space: #{5 * $i};
+  .mt-#{$space} { margin-top: #{$space}px; }
+  .mb-#{$space} { margin-bottom: #{$space}px; }
+  .pt-#{$space} { padding-top: #{$space}px; }
+  .pb-#{$space} { padding-bottom: #{$space}px; }
+}
+
+
+// Input & Interaction Related ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+button, input, label, a, select {
+  cursor: pointer;
+}
+input, textarea, select {
+  border-radius: 5px;
+  border: 1px solid #979797;
+  font-size: 1.6rem;
+
+  &:focus {
+    border-color: #979797;
+  }
+}
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:active, &:visited { }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+
+.btn, button {
+  min-height : 36px;
+
+  border           : 1px solid theme-color(btn-primary);
+  border-radius    : 5px;
+  background-color : #fff;
+  color            : theme-color(btn-primary);
+  font-size        : 1.8rem;
+  line-height      : 3rem;
+  font-weight      : 600;
+  letter-spacing   : 0.05rem;
+
+  padding: 6px 20px;
+
+  &:hover {
+    background-color: theme-color(btn-primary);
+    color: #fff;
+  }
+
+  &:disabled, &.disabled {
+    background-color: #C6C6C6 !important;
+    border-color: #C6C6C6 !important;
+    color: #fff;
+    cursor: not-allowed;
+  }
+
+  &.primaryBtn {
+    border-color: theme-color(btn-primary);
+    background-color: theme-color(btn-primary);
+    color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: theme-color(btn-primary);
+    }
+  }
+
+}
+
+// Error handling ~~~~~~~~~~~~~~~~~~~~~
+.error {
+  display: none;
+  color: red;
+  font-size: 1.4rem;
+}
+input, textarea {
+  &[aria-invalid='true'] {
+    border: 2px solid red;
+
+    & ~ .error {
+      display: block;
+
+      &.appear { display: block; }
+      &.disappear { display: none; }
+    }
+  }
+}
+
+// Contentwise ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+h1, h2, h3, h4, h5, h6 {
+  color: theme-color(brand_blue);
+  margin-top: 0;
+}
+h1 { font-size: 2.4rem;  font-weight: 500; }
+h2 { font-size: 3.2rem;  font-weight: 500; letter-spacing: 0.057rem; color: theme-color(brand_blue); }
+h3 { font-size: 1.8rem;  font-weight: bold; }
+h4 { font-size: 1.4rem;  font-weight: 400; margin: 0.2rem 0; }
+h5 {}
+h6 {}
+
+p {
+  margin: 0;
+
+  & + & {
+    margin-top: 2rem;
+  }
+}
+
+ul, ol {
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+
+.centerWrapper,
+.centerWrapper .innerWrapper {
+  @include flex(center, flex-start, column);
+}
+
+
+.grayBG {
+  background-color: theme-color(grey09);
+}
+
+// media queue specific
+.js_hidden:not(.js_visible) {
+  display: none !important;
+}
+
+.desktop-only { display: block !important; }
+.mobile-only  { display: none !important; }
+@include md {
+  .desktop-only { display: none !important; }
+  .mobile-only  { display: block !important; }
+}

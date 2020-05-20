@@ -1,0 +1,41 @@
+// Standard Button Styling
+%btn_default {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button, a.btn {
+  appearance: none;
+  // @extend %btn_default;
+  text-decoration: none;
+
+  &.primaryBtn,
+  &[type="submit"] {
+    // TODO: Define style
+  }
+
+  // state ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  &:hover {
+    // TODO: Define style
+  }
+
+  &:active {
+
+  }
+
+  &.disabled, &:disabled {
+    // TODO: define style
+  }
+
+}
+
+// .retractable {
+//   // @include dimen(44px);     // WCAG 2.1 Level AAA
+//   // margin: -#{(44px - 15px) * 0.5} -#{(44px - 9px) * 0.5};
+
+//   // cursor: pointer;
+
+//   display: none;
+//   // opacity: 0;
+
+// }

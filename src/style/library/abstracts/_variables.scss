@@ -1,0 +1,165 @@
+@charset 'utf-8';
+
+
+// Resources Paths
+$FONT_PATH                : '/public/fonts'   !default;
+$IMAGES_PATH              : '/public/imgs'    !default;
+
+
+// Namespace
+$NS                       : '' !default;    // Please change to client short name
+
+
+// Breakpoint
+$PAGE_BREAKPOINTS: () !default;
+$PAGE_BREAKPOINTS: map-merge(
+  (
+    xs:   0,
+    sm:   576px,
+    md:   768px,
+    lg:   992px,
+    xl:   1200px
+  ), 
+  $PAGE_BREAKPOINTS
+);
+
+
+// Font & styling ------------------------------------------------------
+$BASE_FONT_SIZE           : 10px  !default;   // Benefit of 10px: prefect for rem
+$BASE_LINE_HEIGHT         : 1.5   !default;   // WCAG Level AA
+// Typefaces
+$FONTS_FAMILY: (
+  base                    : ('Helvetica Neue', Helvetica, Arial, sans-serif),
+  en: (
+    base                  : ('Roboto'),
+  ),
+  es: (
+    base                  : ('Roboto'),
+  ),
+  fr: (
+    base                  : ('Roboto'),
+  ),
+  zh: (
+    base                  : ('Microsoft JhengHei', '微軟正黑體'),
+    HK                    : ('Noto Sans TC'),
+    TW                    : ('Noto Sans TC'),
+    Hant                  : ('Noto Sans TC'),
+    CN                    : ('Noto Sans SC'),
+    Hans                  : ('Noto Sans SC'),
+  )
+) !default;
+
+
+// Default Sizing ------------------------------------------------------
+$DEFAULT_PADDING_SIZE     : 5px   !default;
+
+
+// Icon sizes
+$ICON_S                   : 20px  !default;
+$ICON_SM                  : 30px  !default;
+$ICON_L                   : 60px  !default;
+
+
+// Timing & Animation --------------------------------------------------
+$ANIMATION_SPEED: (
+  fast                    : 300ms,
+  default                 : 500ms,
+  slow                    : 1s
+) !default;
+$DEFAULT_DURATION         : map-get($map: $ANIMATION_SPEED, $key: default) !default;
+$DEFAULT_TIMING           : ease !default;
+
+$TRANSITION-BASE          : all .2s ease-in-out   !default;
+$TRANSITION-FADE          : opacity .15s linear   !default;
+$TRANSITION-COLLAPSE      : height .35s ease      !default;
+
+
+// Languages - https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers
+$LANGUAGES: (
+  'en': ('en'),
+  'es': ('es'),
+  'fr': ('fr'),
+  'zh': ('zh-HK', 'zh-TW', 'zh-Hant', 'zh-CN', 'zh-Hans')
+  // tc: ('zh-HK', 'zh-TW', 'zh-Hant'),
+  // sc: ('zh-CN', 'zh-Hans')
+) !default;
+$DEFAULT_LANGUAGE         : nth(map-keys($LANGUAGES), 1)  !default;
+
+
+// Coloring ------------------------------------------------------------
+
+// Site or theme Colors, https://color.adobe.com/explore
+$COLOR_SET: (
+  // Focus Outline
+  blue-outline      : rgb(77, 144, 254),
+  orange-outline    : #FFC100,
+
+  // Refer: https://coolors.co/011627-fdfffc-2ec4b6-e71d36-ff9f1c
+  masstricht-blue         : rgba(1, 22, 39, 1),
+  baby-powder             : rgba(253, 255, 252, 1),
+  maximum-blue-green      : rgba(46, 196, 182, 1),
+  rose-madder             : rgba(231, 29, 54, 1),
+  crayola                 : rgba(255, 159, 28, 1),
+
+  // Button Color
+  // Refer: https://encycolorpedia.com/24a0ed
+  btn-microsoft-blue      : #00a2ed,
+  btn-disabled            : #6e6e6e,
+  btn-alert               : #f00,
+  btn-primary             : #00a2ed,
+  btn-primary-text        : #fff,
+
+  default-font-color      : #333,
+
+  brand_blue              : #0055a5,
+
+  // Refer: https://www.quackit.com/html/codes/color/color_names.cfm
+  black                   : #000000,
+  disabled                : #757575,
+  grey01                  : #333333,
+  grey02                  : #666666,
+  grey03                  : #808080,
+  grey04                  : #999999,
+  grey05                  : #b2b2b2,
+  grey06                  : #d9d9d9,
+  grey07                  : #ededed,
+  grey08                  : #f2f2f2,
+  grey09                  : #f7f7f7,
+  grey10                  : #fafafa,
+  grey11                  : #6e6e6e,
+  white                   : #ffffff,
+  divider                 : #e5e5e5,
+  red                     : #ff0000,
+  red01                   : #cc0000,
+  red02                   : #e50000,
+  red03                   : #ff3333,
+  red04                   : #ff6666,
+  dark-green              : #0d6c29,
+  dark-green01            : #298236,
+  green                   : #34a344,
+  green01                 : #5cb569,
+  green02                 : #85c78e,
+  digital-green           : #00a865,
+  green-banking01         : #00954b,
+  green-banking02         : #a6ce39,
+  integrated01            : #9a2015,
+  integrated02            : #c74e24,
+  preferred01             : #5b605f,
+  preferred02             : #7f807d,
+  preferred03             : #cfcdc5,
+  prestige01              : #6c4107,
+  prestige02              : #94532c,
+  prestige03              : #d8b18d,
+  light-pink              : #fffafa,
+  light-green             : #a6ce39,
+  brown                   : #c86428,
+  camel                   : #d2a97f,
+  silver                  : #cfcdc5,
+  sky                     : #85cad4,
+  cerulean                : #3194aa,
+  pewter                  : #7f807d,
+  amber01                 : #edc218,
+  amber02                 : #f1d04c,
+  mint                    : #f4faf5,
+  sage                    : #4d7874
+) !default;

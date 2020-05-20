@@ -1,0 +1,11 @@
+@import './style/library/library';
+
+#root {
+  height: 100%;
+  @include flex($justify-content: space-between, $flex-direction: column);
+  background-color: #eee;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+}
