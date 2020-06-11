@@ -4,19 +4,23 @@ import '../style/components/Main.scss';
 
 export default class Main extends React.Component {
 
+  state = {
+    user: ' sir & madam'
+  };
 
   welcomeMsg = () => {
     return (
-      <span className="welcomeMsg">
+      <div className="welcomeMsg">
         <Moment format="MMM D YYYY HH:mm">{new Date()}</Moment>
-      </span>
+        <div>Welcome{this.state.user}!</div>
+      </div>
     );
   }
-
+  
   render() {
     return (
       <main>
-        <this.welcomeMsg></this.welcomeMsg>
+        <this.welcomeMsg />
       </main>
     );
   }
