@@ -9,6 +9,7 @@ main {
   .welcomeMsg {
     font-size: 1.2rem;
     color: theme-color(grey04);
+    text-align: center;
     align-self: center;
     text-align: center;
     @include margin-y(10px, 20px);
