@@ -7,7 +7,7 @@
  * 16-6-2020: Kevin
  */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 
 // Material UI Components
@@ -20,7 +20,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 // Styles & Media
-import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import InboxIcon from '@material-ui/icons/MoveToInboxOutlined';
 
@@ -28,16 +28,7 @@ const useStyles = makeStyles({
   list     : { width: 250, },
   itemTxt  : { fontSize: 18, },
   fullList : { width: 'auto', },
-});
-
-const menuTheme = createMuiTheme({
-  typography: {
-    h4: {
-      fontSize: 18,
-      fontWeight: 600,
-      margin: '16px 0 0 16px',
-    }
-  }
+  menuTitle: { fontSize: 18, fontWeight: 600, margin: '16px 0 0 16px' }
 });
 
 
@@ -88,10 +79,8 @@ export default function MenuComponent() {
           onClose={toggleDrawer(anchor, false)}
           onOpen={toggleDrawer(anchor, true)}
         >
-          <ThemeProvider theme={menuTheme}>
-            <Typography variant="h4" noWrap={true}>Menu</Typography>
-            {list(anchor)}
-          </ThemeProvider>
+          <Typography variant="h4" classes={{ h4: classes.menuTitle }} noWrap={true}>Menu</Typography>
+          {list(anchor)}
         </SwipeableDrawer>
       </React.Fragment>
     ))}
