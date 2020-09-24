@@ -22,6 +22,7 @@
     "@testing-library/user-event": "^7.1.2"
   },
   "scripts": {
+    "docker": "docker build -t chatbot . && docker run -it --rm -d -p 3000:3000 -v $(pwd):/project --name chatbot chatbot bash && docker exec -it chatbot yarn install && docker exec -it chatbot yarn start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
